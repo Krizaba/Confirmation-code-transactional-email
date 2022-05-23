@@ -37,30 +37,11 @@
 
 <body style="Margin:0;padding:0;min-width:100%;background-color:#dde0e1;">
 
-    <!--[if (gte mso 9)|(IE)]>
-    <style type="text/css">
-        body {
-            background-color: #dde0e1!important;
-        }
-        
-        body,
-        table,
-        td,
-        p,
-        a {
-            font-family: sans-serif, Arial, Helvetica!important;
-        }
-    </style>
-    <![endif]-->
+
 
     <center style="width: 100%;table-layout: fixed;background-color:#dde0e1;padding-bottom: 40px;">
         <div style="max-width: 600px;background-color: #fafdfe;box-shadow: 0 0 10px rgba(0, 0, 0, .2);">
 
-            <!--[if (gte mso 9)|(IE)]>
-    <table width="600" align="center" style="border-spacing:0;color:#565656;" role="presentation">
-        <tr>
-            <td style="padding:0;">
-                <![endif]-->
 
             <table align="center" style="border-spacing:0;color:#565656;font-family: 'Lato', sans-serif, Arial, Helvetica!important;background-color: #fafdfe;Margin:0;padding:0;width: 100%;max-width: 600px;" role="presentation">
 
@@ -90,9 +71,55 @@
                     </td>
                 </tr>
                 <!-- END IMAGE SECTION -->
-
-
-
+                <!-- TEXT AREA -->
+                <table>
+                    <tr>
+                        <td class="content" style="font-family:Lato; color:rgb(56, 56, 56);padding:30px 0 30px; text-align:center; line-height:35px;">
+                            <h3>
+                                Hi! <br> Here is the confirmation code for your online form:
+                            </h3>
+                            <h1 style="font-size:3em;letter-spacing:8px;">
+                                5749
+                            </h1>
+                            <h3>All you have to do is copy the confirmation code and <br> paste it to your form to complete the email <br> verification process.</h3>
+                            <!-- END TEXT AREA -->
+                        </td>
+                    </tr>
+                </table>
+                <!-- CONTACT FORM -->
+                <div class="contact-form" style="background-color: #ffff4f; font-family:Lato;">
+                    <table>
+                        <tr>
+                            <td style="width:100%; height:70vh;  display:flex; align-items:center; justify-content:center;">
+                                <form onsubmit="sendEmail(); reset(); return false;" style="background:#fff; display:flex; flex-direction:column;padding: 2vW 4VW; width:100%; width:400px;max-width:600px; border-radius:10px;">
+                                    <h3 style="font-weight:800;">CONTACT US</h3>
+                                    <input style="border:0;margin: 10px 0; padding:20px;outline:none;background:#efefefea; font-size:16px" type="text" id="name" placeholder="Your Name" required>
+                                    <input style="border:0;margin: 10px 0; padding:20px;outline:none;background:#efefefea;font-size:16px" type="email" id="email" placeholder="Email id" required>
+                                    <input style="border:0;margin: 10px 0; padding:20px;outline:none;background:#efefefea;font-size:16px" type="text" id="phone" placeholder="Phone Nr" required>
+                                    <textarea style="border:0;margin: 10px 0; padding:20px;outline:none;background:#efefefea; font-size:16px" id="message" rows="4"></textarea>
+                                    <button class="go-on" style="padding:12px; background:#ffff4f; color:#000; font-size:18px; border:0; outline:none; cursor:pointer; width:150px; margin: 20px auto 0; border-radius:20px; h:color#000;" type="submit">Go on!</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <script src="https://smtpjs.com/v3/smtp.js"></script>
+                <script>
+                    function sendEmail() {
+                        Email.send({
+                            Host: "smtp.yourisp.com",
+                            Username: "username",
+                            Password: "password",
+                            To: 'them@website.com',
+                            From: "you@isp.com",
+                            Subject: "This is the subject",
+                            Body: "And this is the body"
+                        }).then(
+                            message => alert(message)
+                        );
+                    }
+                </script>
+                <!-- END CONTACT FORM -->
             </table>
         </div>
     </center>
